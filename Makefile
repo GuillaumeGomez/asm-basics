@@ -18,19 +18,21 @@
 #
 # 3. This notice may not be removed or altered from any source distribution.
 
-x64:
-	nasm -f elf64 src/test.asm -o test.o
-	ld test.o -o hello_world
-	rm test.o
+examples_x64:
+	mkdir -p bin
+	nasm -f elf64 examples/hello_world/test.asm -o bin/test.o
+	ld bin/test.o -o bin/hello_world
+	rm bin/test.o
 
-x86:
-	nasm -f elf src/test.asm -o test.o
-	ld test.o -o hello_world
-	rm test.o
+examples_x86:
+	mkdir -p bin
+	nasm -f elf examples/hello_world/test.asm -o bin/test.o
+	ld bin/test.o -o bin/hello_world
+	rm bin/test.o
 
 clean:
-	rm hello_world
+	rm bin/hello_world
 
-re: clean x64
+re: clean examples_x64
 
-re_x86: clean x86
+re_x86: clean examples_x86
