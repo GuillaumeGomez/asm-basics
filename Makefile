@@ -18,12 +18,12 @@
 #
 # 3. This notice may not be removed or altered from any source distribution.
 
-hello_world:
+x64:
 	nasm -f elf64 src/test.asm -o test.o
 	ld test.o -o hello_world
 	rm test.o
 
-hello_world_x86:
+x86:
 	nasm -f elf src/test.asm -o test.o
 	ld test.o -o hello_world
 	rm test.o
@@ -31,6 +31,6 @@ hello_world_x86:
 clean:
 	rm hello_world
 
-re: clean hello_world
+re: clean x64
 
-re_x86: clean hello_world_x86
+re_x86: clean x86
