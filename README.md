@@ -1,4 +1,4 @@
-asm-hello-world
+asm-basics
 ===============
 
 A little hello world written in asm.
@@ -12,7 +12,7 @@ To build it, just do :
 Or (if you're under 32 bits) :
 
 ```Shell
-> make hello_world_x86
+> make x86
 ```
 
 ##License
