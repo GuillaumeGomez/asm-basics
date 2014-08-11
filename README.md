@@ -1,7 +1,7 @@
 asm-basics
 ===============
 
-A little hello world written in asm.
+Little examples written in asm.
 
 To build it, just do :
 
