@@ -59,7 +59,7 @@ read_loop:
 
     cmp rax, 0        ; if read syscall returns 0, there is a problem
     je exit           ; so we quit
-    mov r9, [char]    ; to get the value of char, we use the [] and we this value to another register
+    mov r9, [char]    ; to get the value of char, we use the [] and we move this value to another register
     cmp r9, 10        ; we compare 10 (which is the value of backline) to the entered character
     jne read_loop     ; if it's not a backline, then we read the next one
     sub r8, 1         ; otherwise, we subtract 1 from r8 because we don't count backline as a character in this program
