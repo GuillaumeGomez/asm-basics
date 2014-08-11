@@ -20,18 +20,19 @@
 
 examples_x64:
 	mkdir -p bin
-	nasm -f elf64 examples/hello_world/test.asm -o bin/test.o
-	ld bin/test.o -o bin/hello_world
-	rm bin/test.o
+	nasm -f elf64 examples/hello_world/test.asm -o bin/test.o && ld bin/test.o -o bin/hello_world
+	nasm -felf64 examples/entry_character_count/test.asm -o bin/test.o && gcc bin/test.o -o bin/entry_character_count
+	rm -f bin/test.o
 
 examples_x86:
 	mkdir -p bin
-	nasm -f elf examples/hello_world/test.asm -o bin/test.o
-	ld bin/test.o -o bin/hello_world
-	rm bin/test.o
+	nasm -f elf examples/hello_world/test.asm -o bin/test.o && ld bin/test.o -o bin/hello_world
+	nasm -felf examples/entry_character_count/test.asm -o bin/test.o && gcc bin/test.o -o bin/entry_character_count
+	rm -f bin/test.o
 
 clean:
-	rm bin/hello_world
+	rm -f bin/hello_world
+	rm -f bin/entry_character_count
 
 re: clean examples_x64
 
